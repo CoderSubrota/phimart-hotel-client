@@ -7,7 +7,7 @@ import { AuthContext } from "../../../contextsApi/AuthContext";
 import { NavLink } from "react-router-dom";
 
 export default function UserLoginForm({
-  apiUrl = "http://127.0.0.1:8000/api/accounts/login/",
+  apiUrl = "https://phimart-hotel-server.onrender.com/api/accounts/login/",
 }) {
   const [serverError, setServerError] = useState("");
   const navigate = useNavigate();
@@ -109,7 +109,7 @@ export default function UserLoginForm({
             </Button>
 
             <div className="text-center">
-              <a target="blank" href="http://127.0.0.1:8000/api/accounts/password-reset/">
+              <a target="blank" href="https://phimart-hotel-server.onrender.com/api/accounts/password-reset/">
                 <Button variant="link" className="p-0">
                   Forgot password?
                 </Button>

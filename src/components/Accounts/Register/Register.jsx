@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 
-export default function UserRegistrationForm({ apiUrl = 'http://127.0.0.1:8000/api/accounts/' }) {
+export default function UserRegistrationForm({ apiUrl = 'https://phimart-hotel-server.onrender.com/api/accounts/' }) {
   const [serverError, setServerError] = useState('');
   const [success, setSuccess] = useState(false);
   const {

@@ -8,7 +8,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <AuthProvider apiUrl="http://127.0.0.1:8000/api/accounts">
+    <AuthProvider apiUrl="https://phimart-hotel-server.onrender.com/api/accounts">
       <App />
     </AuthProvider>
   </React.StrictMode>

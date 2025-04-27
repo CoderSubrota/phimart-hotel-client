@@ -30,7 +30,7 @@ const Review = () => {
      const token = localStorage.getItem("token") ;
      console.log(token, formData) ;
       await axios.post(
-        `http://127.0.0.1:8000/api/hotels/${id}/reviews/`,
+        `https://phimart-hotel-server.onrender.com/api/hotels/${id}/reviews/`,
         formData ,{
           headers:{
             Authorization:`Bearer ${token}`

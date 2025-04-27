@@ -13,7 +13,7 @@ const HotelImageUpload = () => {
     // Fetch hotel name using the hotel ID
     const fetchHotel = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/hotels/${id}/`);
+        const res = await axios.get(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`);
         setHotelName(res.data.name);
       } catch (err) {
         console.error("Failed to fetch hotel details", err);
@@ -38,7 +38,7 @@ const HotelImageUpload = () => {
 
     try {
       console.log(formData) ;
-      await axios.post(`http://127.0.0.1:8000/api/hotels/${id}/images/`, formData, {
+      await axios.post(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/images/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

@@ -18,7 +18,7 @@ const EditHotel = () => {
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/hotels/${id}/`);
+        const res = await axios.get(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`);
         setFormData(res.data);
       } catch (err) {
         setError(err.response?.data?.detail || "Failed to fetch hotel details");
@@ -38,7 +38,7 @@ const EditHotel = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`http://127.0.0.1:8000/api/hotels/${id}/`, formData);
+      await axios.put(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`, formData);
       alert("Hotel updated successfully!");
       navigate("/hotels");
     } catch (error) {

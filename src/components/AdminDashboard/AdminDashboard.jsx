@@ -8,11 +8,16 @@ const AdminDashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const token = localStorage.getItem("token") ;
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/dashboard/");
+        const response = await axios.get("https://phimart-hotel-server.onrender.com/api/dashboard/",{
+          headers:{
+            Authorization:`Bearer ${token}`
+          }
+        });
         setDashboardData(response.data);
       } catch (err) {
         setError("Failed to fetch dashboard data. Please try again later.");

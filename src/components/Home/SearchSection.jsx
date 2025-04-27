@@ -16,7 +16,7 @@ const HotelSearch = () => {
     try {
       // Fetch hotels by query
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/hotels/?name=${query}`
+        `https://phimart-hotel-server.onrender.com/api/hotels/?name=${query}`
       );
       setHotels(response.data); // Update state with fetched hotels
     } catch (err) {

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Button, Form, Container, Card, Alert, InputGroup } from 'react-bootstrap';
 import { Mail } from 'lucide-react';
 
-export default function ForgotPasswordForm({ apiUrl = 'http://127.0.0.1:8000/api/accounts/password-reset/' }) {
+export default function ForgotPasswordForm({ apiUrl = 'https://phimart-hotel-server.onrender.com/api/accounts/password-reset/' }) {
   const [serverMessage, setServerMessage] = useState('');
   const [serverError, setServerError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);

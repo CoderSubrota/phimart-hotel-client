@@ -26,7 +26,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/hotels/${id}/`);
+        const response = await fetch(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`);
         if (!response.ok) throw new Error("Failed to fetch hotel details");
         const data = await response.json();
         setHotel(data);
@@ -84,7 +84,7 @@ const CheckoutForm = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/hotels/${id}/payment/`,
+        `https://phimart-hotel-server.onrender.com/api/hotels/${id}/payment/`,
         {
           method: "POST",
           headers: {
