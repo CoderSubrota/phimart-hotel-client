@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddHotel = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +34,11 @@ const AddHotel = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Add Hotel</title>
+      </Helmet>
+
     <div className="container mt-5 w-50 mx-auto shadow-lg rounded p-3 mb-5">
       <h2 className="text-center mb-4">Add a Hotel</h2>
       <form onSubmit={handleSubmit}>
@@ -92,6 +98,7 @@ const AddHotel = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

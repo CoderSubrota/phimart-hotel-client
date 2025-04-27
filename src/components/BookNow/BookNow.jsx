@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useParams } from "react-router-dom";
 import jsPDF from "jspdf";
+import { Helmet } from "react-helmet";
 
 const stripe_key = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
 const stripePromise = loadStripe(stripe_key);
@@ -133,6 +134,7 @@ const CheckoutForm = () => {
   };
 
   return (
+  
     <div className="container mt-5" style={{ margin: "14% 0px" }}>
       <h2 className="text-center">Checkout</h2>
       {error && <p className="text-danger text-center">{error}</p>}
@@ -210,9 +212,15 @@ const CheckoutForm = () => {
 
 const BookNow = () => {
   return (
+    <>
+    <Helmet>
+      <title>Book Now</title>
+    </Helmet>
+
     <Elements stripe={stripePromise}>
       <CheckoutForm />
     </Elements>
+    </>
   );
 };
 

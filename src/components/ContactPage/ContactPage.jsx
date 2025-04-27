@@ -2,9 +2,15 @@ import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 const ContactPage = () => {
   return (
+    <>
+        <Helmet>
+          <title>Contact page</title>
+        </Helmet>
+
     <Container className="my-5">
       <h2 className="text-center mb-4">Contact Us</h2>
       <Row className="justify-content-center">
@@ -47,6 +53,7 @@ const ContactPage = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 

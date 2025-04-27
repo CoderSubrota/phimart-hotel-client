@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const HotelImageUpload = () => {
   const { id } = useParams(); // Hotel ID from the route
@@ -54,6 +55,11 @@ const HotelImageUpload = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title> Add Hotel Image </title>
+    </Helmet>
+
     <Container className="w-50 mx-auto  shadow p-4 rounded" style={{margin:"10% 0px"}}>
       <h3 className="mb-4">Upload Image for: <strong>{hotelName}</strong></h3>
       <Form onSubmit={handleUpload}>
@@ -66,6 +72,7 @@ const HotelImageUpload = () => {
         </Button>
       </Form>
     </Container>
+    </>
   );
 };
 

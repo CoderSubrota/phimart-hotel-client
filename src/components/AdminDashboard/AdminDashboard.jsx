@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faBuilding, faUsers, faDollarSign, faCalendarAlt, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 const AdminDashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -47,6 +48,11 @@ const AdminDashboard = () => {
   }
 
   return (
+    <>
+     <Helmet>
+      <title>Admin Dashboard</title>
+     </Helmet>
+
     <Container className="my-5">
       <h2 className="text-center mb-4">Dashboard Overview</h2>
 
@@ -132,6 +138,7 @@ const AdminDashboard = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 

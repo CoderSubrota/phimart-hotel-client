@@ -8,12 +8,17 @@ import {
   faEdit,
   faDollarSign
 } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
   const userData = localStorage.getItem("user");
   const user = JSON.parse(userData);
 
   return (
+   <>
+   <Helmet>
+    <title>Profile page </title>
+   </Helmet>
     <Container className="my-5">
       <Row className="justify-content-center">
         <Col md={6}>
@@ -61,6 +66,7 @@ const Profile = () => {
         </Col>
       </Row>
     </Container>
+   </>
   );
 };
 

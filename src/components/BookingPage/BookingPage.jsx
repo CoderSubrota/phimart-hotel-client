@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 const hotels = [
   {
@@ -31,6 +32,11 @@ const hotels = [
 
 const BookingPage = () => {
   return (
+    <>
+    <Helmet>
+      <title>Booking Page</title>
+    </Helmet>
+
     <Container className="my-5">
       <h2 className="text-center mb-4" title='This all data are dummy'>Your Booking Hotels</h2>
       <Row>
@@ -49,6 +55,7 @@ const BookingPage = () => {
         ))}
       </Row>
     </Container>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faPlus, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 const Hotels = () => {
   const [hotels, setHotels] = useState([]);
@@ -45,6 +46,11 @@ const Hotels = () => {
   );
 
   return (
+    <>
+    <Helmet>
+      <title>Hotels</title>
+    </Helmet>
+    
     <Container className="my-5">
       <h2 className="text-center mb-4">Popular Hotels</h2>
 
@@ -123,6 +129,7 @@ const Hotels = () => {
         ))}
       </Row>
     </Container>
+    </>
   );
 };
 

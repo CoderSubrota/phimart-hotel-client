@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 export default function UserRegistrationForm({ apiUrl = 'https://phimart-hotel-server.onrender.com/api/accounts/' }) {
   const [serverError, setServerError] = useState('');
@@ -33,7 +34,11 @@ export default function UserRegistrationForm({ apiUrl = 'https://phimart-hotel-s
   };
 
   return (
-    <Container className="my-5">
+    <>
+    <Helmet>
+      <title>Register Page</title>
+    </Helmet>
+     <Container className="my-5">
       <h2 className="mb-4 text-center">Create Account</h2>
       {success && <Alert variant="success" style={{margin:"16% 0px"}}>Registration successful! Check your email to verify your account.</Alert>}
       {serverError && <Alert variant="danger" style={{margin:"16% 0px"}}>{serverError}</Alert>}
@@ -154,5 +159,6 @@ export default function UserRegistrationForm({ apiUrl = 'https://phimart-hotel-s
         </div>
       )}
     </Container>
+    </> 
   );
 }

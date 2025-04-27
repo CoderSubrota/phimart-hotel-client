@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Button, Container, Alert, Card } from "react-bootstrap";
 import { AuthContext } from "../../../contextsApi/AuthContext";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function UserLoginForm({
   apiUrl = "https://phimart-hotel-server.onrender.com/api/accounts/login/",
@@ -40,6 +41,11 @@ export default function UserLoginForm({
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Login Page</title>
+    </Helmet>
+
     <Container
       className="d-flex justify-content-center align-items-center vh-100"
       style={{
@@ -119,5 +125,6 @@ export default function UserLoginForm({
         </Card.Body>
       </Card>
     </Container>
+    </>
   );
 }

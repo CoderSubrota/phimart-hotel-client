@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const EditHotel = () => {
   const { id } = useParams();
@@ -51,6 +52,11 @@ const EditHotel = () => {
   if (error) return <p className="text-danger text-center">{error}</p>;
 
   return (
+    <>
+       <Helmet>
+      <title>Edit Hotel</title>
+      </Helmet>
+
     <Container className="my-5">
       <h2 className="text-center mb-4">Edit Hotel</h2>
       <Form onSubmit={handleSubmit}>
@@ -99,6 +105,7 @@ const EditHotel = () => {
         </Button>
       </Form>
     </Container>
+    </>
   );
 };
 
