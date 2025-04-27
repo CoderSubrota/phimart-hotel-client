@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+// import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"; 
 import { faEnvelope, faPhone, faInfoCircle, faQuestionCircle, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
@@ -62,7 +62,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-white text-decoration-none"
                 >
-                  <FontAwesomeIcon icon={faFacebook} className="me-2" />
+                  {/* <FontAwesomeIcon icon={faFacebook} className="me-2" /> */}
                   Facebook
                 </a>
               </li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-white text-decoration-none"
                 >
-                  <FontAwesomeIcon icon={faInstagram} className="me-2" />
+                  {/* <FontAwesomeIcon icon={faInstagram} className="me-2" /> */}
                   Instagram
                 </a>
               </li>
