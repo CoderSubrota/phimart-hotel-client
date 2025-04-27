@@ -1,7 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faInfoCircle, faQuestionCircle, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -11,7 +9,7 @@ const Footer = () => {
           {/* About Section */}
           <Col md={4} className="mb-3">
             <h5>
-              <FontAwesomeIcon icon={faInfoCircle} className="me-2" />
+              <i className="fas fa-info-circle me-2"></i>
               Phimart Hotels
             </h5>
             <p>
@@ -25,25 +23,25 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li>
                 <a href="/about" className="text-white text-decoration-none">
-                  <FontAwesomeIcon icon={faInfoCircle} className="me-2" />
+                  <i className="fas fa-info-circle me-2"></i>
                   About Us
                 </a>
               </li>
               <li>
                 <a href="/contact" className="text-white text-decoration-none">
-                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                  <i className="fas fa-envelope me-2"></i>
                   Contact
                 </a>
               </li>
               <li>
                 <a href="/faq" className="text-white text-decoration-none">
-                  <FontAwesomeIcon icon={faQuestionCircle} className="me-2" />
+                  <i className="fas fa-question-circle me-2"></i>
                   FAQ
                 </a>
               </li>
               <li>
                 <a href="/terms" className="text-white text-decoration-none">
-                  <FontAwesomeIcon icon={faFileAlt} className="me-2" />
+                  <i className="fas fa-file-alt me-2"></i>
                   Terms & Conditions
                 </a>
               </li>
@@ -61,7 +59,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-white text-decoration-none"
                 >
-                  {/* <FontAwesomeIcon icon={faFacebook} className="me-2" /> */}
+                  <i className="fab fa-facebook me-2"></i>
                   Facebook
                 </a>
               </li>
@@ -72,7 +70,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-white text-decoration-none"
                 >
-                  {/* <FontAwesomeIcon icon={faInstagram} className="me-2" /> */}
+                  <i className="fab fa-instagram me-2"></i>
                   Instagram
                 </a>
               </li>
@@ -81,12 +79,12 @@ const Footer = () => {
                   href="mailto:support@phimart.com"
                   className="text-white text-decoration-none"
                 >
-                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                  <i className="fas fa-envelope me-2"></i>
                   support@phimart.com
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon icon={faPhone} className="me-2" />
+                <i className="fas fa-phone me-2"></i>
                 +880 123 456 789
               </li>
             </ul>
