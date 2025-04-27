@@ -10,14 +10,14 @@ const AdminDashboard = () => {
   const [error, setError] = useState(null);
   const token = localStorage.getItem("token") ;
 
+ 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get("https://phimart-hotel-server.onrender.com/api/dashboard/",{
-          headers:{
-            Authorization:`Bearer ${token}`
-          }
-        });
+        const token = localStorage.getItem("token");
+        console.log(token) ;
+
+        const response = await axios.get("https://phimart-hotel-server.onrender.com/api/dashboard/");
         setDashboardData(response.data);
       } catch (err) {
         setError("Failed to fetch dashboard data. Please try again later.");
@@ -28,6 +28,7 @@ const AdminDashboard = () => {
 
     fetchDashboardData();
   }, []);
+
 
   if (loading) {
     return (
