@@ -10,7 +10,8 @@ const PopularHotels = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const userToken = localStorage.getItem("token");
+  const getUser = localStorage.getItem("user");
+  const user = JSON.parse(getUser) ;
 
   useEffect(() => {
     const fetchHotels = async () => {
@@ -71,7 +72,7 @@ const PopularHotels = () => {
                     "No reviews available."
                   )}
                 </Card.Text>
-                {userToken && (
+                {user.role==="admin" && (
                   <>
                     <Button
                       onClick={() => navigate(`/hotel/${hotel.id}`)}

@@ -13,6 +13,10 @@ const Hotels = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
+  const getUser = localStorage.getItem("user");
+  const user = JSON.parse(getUser) ;
+
+  
   useEffect(() => {
     const fetchHotels = async () => {
       try {
@@ -99,7 +103,10 @@ const Hotels = () => {
                   <FontAwesomeIcon icon={faInfoCircle} className="me-1" />
                   Show Details
                 </Button>
-                <Button
+        
+                  {user.role==="admin" && (
+                        <>
+                  <Button
                   className="my-2 mx-2"
                   onClick={() => navigate(`add-hotel/`)}
                   variant="success"
@@ -123,6 +130,8 @@ const Hotels = () => {
                   <FontAwesomeIcon icon={faTrash} className="me-1" />
                   Delete
                 </Button>
+                </> )
+              }
               </Card.Body>
             </Card>
           </Col>
