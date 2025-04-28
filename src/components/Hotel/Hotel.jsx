@@ -12,8 +12,9 @@ const HotelDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Check for user authentication token
   const userToken = localStorage.getItem("token");
+  const getUser = localStorage.getItem("user");
+  const user = getUser ? JSON.parse(getUser) : null;
 
   useEffect(() => {
     const fetchHotel = async () => {
@@ -23,7 +24,12 @@ const HotelDetails = () => {
           throw new Error("Failed to fetch hotel details");
         }
         const data = await response.json();
-        setHotel(data);
+        const hotelData = {
+          ...data,
+          images: data.images || [],
+          reviews: data.reviews || [],
+        };
+        setHotel(hotelData);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -46,18 +52,16 @@ const HotelDetails = () => {
     return <p className="text-center">No hotel found.</p>;
   }
 
-  // Prepare images for the gallery
-  const images = hotel.images.map((image) => ({
+  const images = hotel.images?.map((image) => ({
     original: image.image,
     thumbnail: image.image,
     description: `Image ${image.id}`,
-  }));
+  })) || [];
 
   return (
     <Container className="my-5">
       <h2 className="text-center mb-4">{hotel.name}</h2>
       <Row>
-        {/* Hotel Details */}
         <Col md={6}>
           <Card className="shadow-lg border-0">
             <Card.Body>
@@ -72,7 +76,6 @@ const HotelDetails = () => {
                 <FontAwesomeIcon icon={faComments} className="me-2 text-info" />
                 <strong>Description:</strong> {hotel.description}
                 <div className="d-flex justify-content-around my-3">
-                  {/* Conditionally render buttons if userToken exists */}
                   {userToken && (
                     <>
                       <NavLink to={`review/${hotel.id}`}>
@@ -87,13 +90,15 @@ const HotelDetails = () => {
                           Buy Now
                         </Button>
                       </NavLink>
-                      <NavLink to={`hotel-image/${hotel.id}`}>
-                        <Button variant="secondary" className="mx-2">
-                          <FontAwesomeIcon icon={faEdit} className="me-1" />
-                          Upload Hotel Image
-                        </Button>
-                      </NavLink>
                     </>
+                  )}
+                  {user && user.role === "admin" && (
+                    <NavLink to={`hotel-image/${hotel.id}`}>
+                      <Button variant="secondary" className="mx-2">
+                        <FontAwesomeIcon icon={faEdit} className="me-1" />
+                        Upload Hotel Image
+                      </Button>
+                    </NavLink>
                   )}
                 </div>
               </Card.Text>
@@ -101,7 +106,6 @@ const HotelDetails = () => {
           </Card>
         </Col>
 
-        {/* Image Gallery and Reviews */}
         <Col md={6}>
           <h5 className="fw-bold">
             <FontAwesomeIcon icon={faStar} className="me-2 text-warning" />
@@ -115,8 +119,7 @@ const HotelDetails = () => {
           {hotel.reviews.length > 0 ? (
             hotel.reviews.map((review) => (
               <div key={review.id} className="mb-3">
-                <strong>{review.user}</strong> (Rating: {review.rating}):
-                <span> {review.comment}</span>
+                <strong>{review.user}</strong> (Rating: {review.rating}): <span>{review.comment}</span>
               </div>
             ))
           ) : (
