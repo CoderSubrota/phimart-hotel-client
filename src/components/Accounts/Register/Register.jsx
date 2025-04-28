@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 
-export default function UserRegistrationForm({ apiUrl = 'https://phimart-hotel-server.onrender.com/api/accounts/' }) {
+export default function UserRegistrationForm({ apiUrl = 'https://hotel-server-r5s5.onrender.com/api/accounts/' }) {
   const [serverError, setServerError] = useState('');
   const [success, setSuccess] = useState(false);
   const {

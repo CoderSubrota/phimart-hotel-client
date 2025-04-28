@@ -23,7 +23,7 @@ const AddHotel = () => {
     event.preventDefault();
     setSubmitting(true);
     try {
-      const response = await axios.post("https://phimart-hotel-server.onrender.com/api/hotels/", formData);
+      const response = await axios.post("https://hotel-server-r5s5.onrender.com/api/hotels/", formData);
       setSubmitting(false);
       navigate("/hotels"); 
     } catch (error) {

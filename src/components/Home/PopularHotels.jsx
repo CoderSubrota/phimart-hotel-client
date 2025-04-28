@@ -15,7 +15,7 @@ const PopularHotels = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const res = await axios.get("https://phimart-hotel-server.onrender.com/api/hotels/");
+        const res = await axios.get("https://hotel-server-r5s5.onrender.com/api/hotels/");
         setHotels(res.data);
       } catch (err) {
         setError(err.response?.data?.detail || "Failed to fetch hotels");
@@ -30,7 +30,7 @@ const PopularHotels = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this hotel?")) {
       try {
-        await axios.delete(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`);
+        await axios.delete(`https://hotel-server-r5s5.onrender.com/api/hotels/${id}/`);
         setHotels(hotels.filter((hotel) => hotel.id !== id));
         alert("Hotel deleted successfully!");
       } catch (error) {

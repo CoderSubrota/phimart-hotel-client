@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 export default function UserLoginForm({
-  apiUrl = "https://phimart-hotel-server.onrender.com/api/accounts/login/",
+  apiUrl = "https://hotel-server-r5s5.onrender.com/api/accounts/login/",
 }) {
   const [serverError, setServerError] = useState("");
   const navigate = useNavigate();
@@ -115,7 +115,7 @@ export default function UserLoginForm({
             </Button>
 
             <div className="text-center">
-              <a target="blank" href="https://phimart-hotel-server.onrender.com/api/accounts/password-reset/">
+              <a target="blank" href="https://hotel-server-r5s5.onrender.com/api/accounts/password-reset/">
                 <Button variant="link" className="p-0">
                   Forgot password?
                 </Button>

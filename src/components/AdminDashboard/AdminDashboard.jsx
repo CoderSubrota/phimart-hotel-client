@@ -18,7 +18,7 @@ const AdminDashboard = () => {
         const token = localStorage.getItem("token");
         console.log(token) ;
 
-        const response = await axios.get("https://phimart-hotel-server.onrender.com/api/dashboard/");
+        const response = await axios.get("https://hotel-server-r5s5.onrender.com/api/dashboard/");
         setDashboardData(response.data);
       } catch (err) {
         setError("Failed to fetch dashboard data. Please try again later.");

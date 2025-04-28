@@ -16,7 +16,7 @@ const HotelSearch = () => {
     try {
       // Fetch hotels by query
       const response = await axios.get(
-        `https://phimart-hotel-server.onrender.com/api/hotels/?name=${query}`
+        `https://hotel-server-r5s5.onrender.com/api/hotels/?name=${query}`
       );
       setHotels(response.data); // Update state with fetched hotels
     } catch (err) {

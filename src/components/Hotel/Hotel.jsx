@@ -18,7 +18,7 @@ const HotelDetails = () => {
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const response = await fetch(`https://phimart-hotel-server.onrender.com/api/hotels/${id}/`);
+        const response = await fetch(`https://hotel-server-r5s5.onrender.com/api/hotels/${id}/`);
         if (!response.ok) {
           throw new Error("Failed to fetch hotel details");
         }
