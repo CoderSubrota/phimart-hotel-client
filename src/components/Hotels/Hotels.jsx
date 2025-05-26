@@ -72,7 +72,7 @@ const Hotels = () => {
       </Form>
 
       <Row>
-        {filteredHotels.map((hotel) => (
+        {filteredHotels?.map((hotel) => (
           <Col md={4} key={hotel.id} className="mb-4">
             <Card>
               <Card.Img

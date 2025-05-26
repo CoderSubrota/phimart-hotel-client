@@ -49,7 +49,7 @@ const PopularHotels = () => {
       {error && <p className="text-danger text-center">{error}</p>}
 
       <Row>
-        {hotels.map((hotel) => (
+        {hotels?.map((hotel) => (
           <Col id="hotels" md={4} key={hotel.id} className="mb-4">
             <Card>
               <Card.Img
