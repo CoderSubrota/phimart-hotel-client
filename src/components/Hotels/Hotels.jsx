@@ -21,7 +21,7 @@ const Hotels = () => {
     const fetchHotels = async () => {
       try {
         const res = await axios.get("https://hotel-server-r5s5.onrender.com/api/hotels/");
-        setHotels(res.data);
+        setHotels(res?.data);
       } catch (err) {
         setError(err.response?.data?.detail || "Failed to fetch hotels");
       } finally {
@@ -36,7 +36,7 @@ const Hotels = () => {
     if (window.confirm("Are you sure you want to delete this hotel?")) {
       try {
         await axios.delete(`https://hotel-server-r5s5.onrender.com/api/hotels/${id}/`);
-        setHotels(hotels.filter((hotel) => hotel.id !== id));
+        setHotels(hotels?.filter((hotel) => hotel?.id !== id));
         alert("Hotel deleted successfully!");
       } catch (error) {
         console.error("Error deleting hotel:", error);
@@ -46,7 +46,7 @@ const Hotels = () => {
   };
 
   const filteredHotels = hotels.filter((hotel) =>
-    hotel.name.toLowerCase().includes(searchTerm.toLowerCase())
+    hotel?.name?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
